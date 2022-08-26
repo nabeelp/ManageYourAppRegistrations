@@ -1,0 +1,24 @@
+{
+  "bindings": [
+    {
+      "name": "Timer",
+      "schedule": "0 0 3 * * *",
+      "direction": "in",
+      "type": "timerTrigger"
+    },
+    {
+      "name": "outputBlobAllApps",
+      "path": "aadapps/apps.json",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out",
+      "type": "blob"
+    },
+    {
+      "name": "outputBlobExpiredApps",
+      "direction": "out",
+      "type": "blob",
+      "path": "aadapps/expired.json",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
